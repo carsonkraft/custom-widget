@@ -1,34 +1,31 @@
-$( function() {
-  function hexFromRGB(r, g, b) {
-    var hex = [
-      r.toString( 16 ),
-      g.toString( 16 ),
-      b.toString( 16 )
-    ];
-    $.each( hex, function( nr, val ) {
-      if ( val.length === 1 ) {
-        hex[ nr ] = "0" + val;
-      }
-    });
-    return hex.join( "" ).toUpperCase();
-  }
-  function refreshSwatch() {
-    var red = $( "#red" ).slider( "value" ),
-      green = $( "#green" ).slider( "value" ),
-      blue = $( "#blue" ).slider( "value" ),
-      hex = hexFromRGB( red, green, blue );
-    $( "#swatch" ).css( "background-color", "#" + hex );
-  }
+  $.widget( "custom.mySlider", $.ui.slider, {
 
-  $( "#red, #green, #blue" ).slider({
-    orientation: "horizontal",
-    range: "min",
-    max: 255,
-    value: 127,
-    slide: refreshSwatch,
-    change: refreshSwatch
+      tabs: function() {
+          var max = this.options.max;
+          for(i = 0; i < max; i++){
+            this.element.append('<div class="container" id="tab'+ i +'"></div>');
+          }
+      },
+      addTabContent: function(tabContents, tabNumber) {
+          var max = this.options.max;
+            $( '#tab'+ tabNumber ).append(tabContents);
+      }
+
   });
-  $( "#red" ).slider( "value", 255 );
-  $( "#green" ).slider( "value", 140 );
-  $( "#blue" ).slider( "value", 60 );
-} );
+
+
+  $( function() {
+      $( "#slider2" ).mySlider({
+        value: 0,
+        min: 0,
+        max: 5,
+        step: 1,
+        range: "min",
+        slide: function( event, ui ) {
+          $( "#amount" ).val( ui.value );
+        }
+      });
+      $( "#amount" ).val( $( "#slider2" ).mySlider( "value" ) );
+      $( "#slider2" ).mySlider( "tabs");
+      $( "#slider2" ).mySlider( "addTabContent","hello world",2);
+    } );
