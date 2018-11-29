@@ -1,3 +1,37 @@
+
+/* ==========================================================================
+  Page CSS
+   ========================================================================== */
+.page-content{
+  margin: 0 15px;
+}
+
 /* ==========================================================================
   Custom CSS for Slider-Tabs-Breadcrums Widget
    ========================================================================== */
+
+   .tabcontent{
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    margin-top: 20px;
+   }
+   #tab0{
+    display: block;
+   }
+
+  #custom-handle{
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-left: 20px solid red;
+      border-bottom: 20px solid transparent;
+      border-radius: 0px;
+      margin-top: -9px;
+      background: transparent;
+      outline: none !important;
+    }
+
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+      border: none;
+    }
