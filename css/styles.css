@@ -2,35 +2,95 @@
 /* ==========================================================================
   Page CSS
    ========================================================================== */
+body{
+  background-color: #edf7f6;
+  font-family: 'Roboto', sans-serif;
+  color:#333;
+}
+input{
+  background-color: white;
+}
+input#amount{
+  font-family: 'Roboto', sans-serif !important;
+  color:#333 !important;
+  font-size: 1em !important;
+}
+
 .page-content{
   margin: 0 15px;
+}
+
+.checkout{
+  background:white;
+  height: 300px;
+  padding: 10px;
 }
 
 /* ==========================================================================
   Custom CSS for Slider-Tabs-Breadcrums Widget
    ========================================================================== */
+   .ui-slider-horizontal {
+       height: 30px;
+       margin-top: -10px;
+   }
 
    .tabcontent{
     display: none;
     padding: 6px 12px;
     border-top: none;
-    margin-top: 20px;
+    background-color: white;
+    margin-top: 1px;
    }
+
+   .tabtitle{
+    z-index: 2000;
+    color: black;
+    margin-top: 5px;
+    display: block;
+    float: left;
+    width: 33%;
+    text-align: center;
+   }
+
+   .ui-slider .ui-slider-range{
+     position: static;
+   }
+
    #tab0{
     display: block;
    }
+   #title0{
+    display: block;
+   }
 
-  #custom-handle{
+ #custom-handle{
       width: 0;
       height: 0;
       border-top: 20px solid transparent;
-      border-left: 20px solid red;
+      border-left: 20px solid #2560a4;
       border-bottom: 20px solid transparent;
       border-radius: 0px;
-      margin-top: -9px;
+      margin-left: -2px;
       background: transparent;
       outline: none !important;
-    }
+  }
+
+  .fa{
+    margin-bottom: 15px;
+  }
+
+  #custom-handle:hover{
+    border-left: 20px solid #174171;
+  }
+  #custom-handle:active{
+    border-left: 20px solid #174171;
+  }
+
+  .ui-widget-header{
+
+    background: #2560a4;
+  }
+
 
     .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
       border: none;

@@ -3,10 +3,12 @@
           var max = this.options.max;
           for(i = 0; i <= max; i++){
             this.element.append('<div class="tabcontent" id="tab'+ i +'"></div>');
+            $("#navtext").append('<div class="tabtitle" id="title'+ i +'"></div>');
           }
       },
-      addTabContent: function(tabContents, tabNumber) {
+      addTabContent: function(tabTitle, tabContents, tabNumber) {
           var max = this.options.max;
+            $( '#title'+ tabNumber ).append(tabTitle);
             $( '#tab'+ tabNumber ).append(tabContents);
       },
   });
@@ -23,6 +25,8 @@
           $( "#amount" ).val( ui.value );
           var tabValue = ui.value;
           var tabcontent = document.getElementsByClassName("tabcontent");
+          var tabtitle = document.getElementsByClassName("tabtitle");
+
           for (i = 0; i < tabcontent.length; i++) {
               tabcontent[i].style.display = "none";
           }
@@ -31,8 +35,10 @@
       });
       $( "#amount" ).val( $( "#slider2" ).mySlider( "value" ) );
       $( "#slider2" ).mySlider( "tabs");
-      $( "#slider2" ).mySlider( "addTabContent","Review Your Order",2);
-      $( "#slider2" ).mySlider( "addTabContent","Billing Info",1);
-      $( "#slider2" ).mySlider( "addTabContent","Shipping Info",0);
-      $( "#slider2" ).mySlider( "addTabContent","Thank you for your order!",3);
+      var billing = document.getElementById('billing').innerHTML;
+      var shipping = document.getElementById('shipping').innerHTML;
+      $( "#slider2" ).mySlider( "addTabContent","REVIEW","Review Your Order",2);
+      $( "#slider2" ).mySlider( "addTabContent","BILLING",billing,1);
+      $( "#slider2" ).mySlider( "addTabContent","SHIPPING",shipping,0);
+      $( "#slider2" ).mySlider( "addTabContent","","Thank you for your order!",3);
     } );

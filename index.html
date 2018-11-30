@@ -14,15 +14,71 @@
 <body>
 
 <div class="page-content">
+  <h1>slider/breadcrums/tabs</h1>
+  <p>I used jQuery's UI framework in order to build tabs that navigate via a slider to show a user's progress in completing a certain task </p>
   <p>
-    <label for="amount">Navigate between tabs:</label>
+<div class="checkout">
+    <label for="amount">On tab number:</label>
     <input type="text" id="amount" readonly style="border:0; color:black; font-weight:bold;">
   </p>
 
    <div id="slider2">
-      <div id="custom-handle" class="ui-slider-handle"></div>
+      <div id="custom-handle" class="ui-slider-handle arrow right"></div>
+      <div id="navtext"></div>
    </div>
+   <div class="arrow right"></div>
+</div>
+
+  <p>Another way to use this widget is to convert it to an image carousel</p>
 </div>
 
 </body>
+
+<script id="shipping" type="text/html">
+<div class="row">
+  <div class="col-50">
+    <h3>Shipping Address</h3>
+    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+    <br>
+    <br>
+    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+    <input type="text" id="email" name="email" placeholder="john@example.com">
+    <br>
+    <br>
+    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+    <br>
+    <br>
+    <label for="city"><i class="fa fa-institution"></i> City</label>
+    <input type="text" id="city" name="city" placeholder="New York">
+
+    <div class="row">
+      <div class="col-50">
+</script>
+
+<script id="billing" type="text/html">
+<div class="row">
+  <div class="col-50">
+    <h3>Billing Address</h3>
+    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+    <br>
+    <br>
+    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+    <input type="text" id="email" name="email" placeholder="john@example.com">
+    <br>
+    <br>
+    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+    <br>
+    <br>
+    <label for="city"><i class="fa fa-institution"></i> City</label>
+    <input type="text" id="city" name="city" placeholder="New York">
+
+    <div class="row">
+      <div class="col-50">
+</script>
+
+
 </html>
